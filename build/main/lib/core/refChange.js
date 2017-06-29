@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = require("../config");
 var isDefined_1 = require("../checks/isDefined");
 var statistics = {};
 var chatty = true;
@@ -12,13 +11,13 @@ function prefix(message) {
     return LOGGING_NAME_REF_CHANGE + ": " + message;
 }
 function log(message) {
-    return config_1.config.log(prefix(message));
+    return console.log(prefix(message));
 }
 function warn(message) {
-    return config_1.config.warn(prefix(message));
+    return console.warn(prefix(message));
 }
 function error(message) {
-    return config_1.config.error(prefix(message));
+    return console.error(prefix(message));
 }
 function garbageCollect() {
     var uuids = Object.keys(statistics);
@@ -53,13 +52,13 @@ function outstandingMessage(outstanding) {
 function dump() {
     var outstanding = stop();
     if (outstanding > 0) {
-        config_1.config.warn("Memory Leak!");
-        config_1.config.warn(outstandingMessage(outstanding));
-        config_1.config.warn(JSON.stringify(statistics, null, 2));
+        console.warn("Memory Leak!");
+        console.warn(outstandingMessage(outstanding));
+        console.warn(JSON.stringify(statistics, null, 2));
     }
     else {
         if (chatty) {
-            config_1.config.log(outstandingMessage(outstanding));
+            console.log(outstandingMessage(outstanding));
         }
     }
     return outstanding;

@@ -4,7 +4,6 @@ import { GeometryBase } from './GeometryBase';
 import { Material } from './Material';
 import { mustBeNonNullObject } from '../checks/mustBeNonNullObject';
 import { Primitive } from './Primitive';
-import { SpinorE3 } from '../math/SpinorE3';
 import { Usage } from './Usage';
 import { VertexAttribPointer } from './VertexAttribPointer';
 import { vertexArraysFromPrimitive } from './vertexArraysFromPrimitive';
@@ -46,7 +45,7 @@ export class GeometryArrays extends GeometryBase {
     /**
      * 
      */
-    constructor(contextManager: ContextManager, primitive: Primitive, options: { order?: string[]; tilt?: SpinorE3 } = {}, levelUp = 0) {
+    constructor(contextManager: ContextManager, primitive: Primitive, options: { order?: string[]; } = {}, levelUp = 0) {
         super(contextManager, levelUp + 1);
         mustBeNonNullObject('primitive', primitive);
         this.setLoggingName('GeometryArrays');

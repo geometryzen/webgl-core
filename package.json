@@ -1,7 +1,7 @@
 {
   "name": "webgl-core",
   "version": "1.0.0",
-  "description": "WebGL library for mathematical physics using Geometric Algebra",
+  "description": "WebGL library with shareable resources and context recovery.",
   "author": {
     "name": "David Geo Holmes",
     "email": "david.geo.holmes@gmail.com"

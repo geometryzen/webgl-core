@@ -1,4 +1,3 @@
-import { config } from '../config';
 import { isDefined } from '../checks/isDefined';
 
 let statistics: { [uuid: string]: { refCount: number; name: string; zombie: boolean } } = {};
@@ -14,15 +13,15 @@ function prefix(message: string): string {
 }
 
 function log(message: string): void {
-    return config.log(prefix(message));
+    return console.log(prefix(message));
 }
 
 function warn(message: string): void {
-    return config.warn(prefix(message));
+    return console.warn(prefix(message));
 }
 
 function error(message: string): void {
-    return config.error(prefix(message));
+    return console.error(prefix(message));
 }
 
 function garbageCollect(): void {
@@ -62,13 +61,13 @@ function outstandingMessage(outstanding: number): string {
 function dump(): number {
     const outstanding: number = stop();
     if (outstanding > 0) {
-        config.warn("Memory Leak!");
-        config.warn(outstandingMessage(outstanding));
-        config.warn(JSON.stringify(statistics, null, 2));
+        console.warn("Memory Leak!");
+        console.warn(outstandingMessage(outstanding));
+        console.warn(JSON.stringify(statistics, null, 2));
     }
     else {
         if (chatty) {
-            config.log(outstandingMessage(outstanding));
+            console.log(outstandingMessage(outstanding));
         }
     }
     return outstanding;

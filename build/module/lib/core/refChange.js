@@ -1,4 +1,3 @@
-import { config } from '../config';
 import { isDefined } from '../checks/isDefined';
 var statistics = {};
 var chatty = true;
@@ -10,13 +9,13 @@ function prefix(message) {
     return LOGGING_NAME_REF_CHANGE + ": " + message;
 }
 function log(message) {
-    return config.log(prefix(message));
+    return console.log(prefix(message));
 }
 function warn(message) {
-    return config.warn(prefix(message));
+    return console.warn(prefix(message));
 }
 function error(message) {
-    return config.error(prefix(message));
+    return console.error(prefix(message));
 }
 function garbageCollect() {
     var uuids = Object.keys(statistics);
@@ -51,13 +50,13 @@ function outstandingMessage(outstanding) {
 function dump() {
     var outstanding = stop();
     if (outstanding > 0) {
-        config.warn("Memory Leak!");
-        config.warn(outstandingMessage(outstanding));
-        config.warn(JSON.stringify(statistics, null, 2));
+        console.warn("Memory Leak!");
+        console.warn(outstandingMessage(outstanding));
+        console.warn(JSON.stringify(statistics, null, 2));
     }
     else {
         if (chatty) {
-            config.log(outstandingMessage(outstanding));
+            console.log(outstandingMessage(outstanding));
         }
     }
     return outstanding;

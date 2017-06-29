@@ -1,4 +1,4 @@
-import { applyMixins } from '../utils/applyMixins';
+import { applyMixins } from './applyMixins';
 import { LockableMixin } from './Lockable';
 
 /**

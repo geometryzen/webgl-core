@@ -4,7 +4,6 @@ import { Capability } from './Capability';
 import { checkEnums } from './checkEnums';
 import { ClearBufferMask } from './ClearBufferMask';
 import { DepthFunction } from './DepthFunction';
-import { EIGHTLogger } from '../commands/EIGHTLogger';
 import { ContextConsumer } from './ContextConsumer';
 import { ContextManager } from './ContextManager';
 import { Geometry } from './Geometry';
@@ -13,24 +12,21 @@ import { initWebGL } from './initWebGL';
 import { isDefined } from '../checks/isDefined';
 import { Material } from './Material';
 import { MaterialKey } from './MaterialKey';
-import { mustBeGE } from '../checks/mustBeGE';
-import { mustBeLE } from '../checks/mustBeLE';
+// import { mustBeGE } from '../checks/mustBeGE';
+// import { mustBeLE } from '../checks/mustBeLE';
 import { mustBeNonNullObject } from '../checks/mustBeNonNullObject';
 import { mustBeNumber } from '../checks/mustBeNumber';
 import { mustBeString } from '../checks/mustBeString';
 import { PixelFormat } from './PixelFormat';
 import { PixelType } from './PixelType';
-import { R3 } from '../math/R3';
 import { ShareableArray } from '../collections/ShareableArray';
 import { ShareableBase } from './ShareableBase';
-import { vectorFromCoords } from '../math/R3';
 import { VersionLogger } from '../commands/VersionLogger';
 import { WebGLClearColor } from '../commands/WebGLClearColor';
 import { WebGLEnable } from '../commands/WebGLEnable';
 import { WebGLDisable } from '../commands/WebGLDisable';
 
 export interface EngineAttributes extends WebGLContextAttributes {
-    eightLogging?: boolean;
     webglLogging?: boolean;
 }
 
@@ -127,9 +123,6 @@ export class Engine extends ShareableBase implements ContextManager {
 
         this._attributes = attributes;
 
-        if (attributes.eightLogging) {
-            this._commands.pushWeakRef(new EIGHTLogger());
-        }
         if (attributes.webglLogging) {
             this._commands.pushWeakRef(new VersionLogger(this));
         }
@@ -571,6 +564,7 @@ export class Engine extends ShareableBase implements ContextManager {
      * @param deviceY The y-coordinate of the device event.
      * @param imageZ The optional value to use as the resulting depth coordinate.
      */
+    /*
     deviceToImageCoords(deviceX: number, deviceY: number, imageZ = 0): Readonly<R3> {
         mustBeNumber('deviceX', deviceX);
         mustBeNumber('deviceY', deviceY);
@@ -581,4 +575,5 @@ export class Engine extends ShareableBase implements ContextManager {
         const imageY = 1 - (2 * deviceY) / this.canvas.height;
         return vectorFromCoords(imageX, imageY, imageZ);
     }
+    */
 }

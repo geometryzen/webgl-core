@@ -10,8 +10,6 @@ import { Material } from './Material';
 import { mustBeArray } from '../checks/mustBeArray';
 import { mustBeNonNullObject } from '../checks/mustBeNonNullObject';
 import { Primitive } from './Primitive';
-import { SpinorE3 } from '../math/SpinorE3';
-import { VectorE3 } from '../math/VectorE3';
 import { VertexAttribPointer } from './VertexAttribPointer';
 import { vertexArraysFromPrimitive } from './vertexArraysFromPrimitive';
 import { VertexBuffer } from './VertexBuffer';
@@ -57,7 +55,7 @@ export class GeometryElements extends GeometryBase {
     /**
      * 
      */
-    constructor(contextManager: ContextManager, primitive: Primitive, options: { axis?: VectorE3; meridian?: VectorE3; order?: string[]; tilt?: SpinorE3 } = {}, levelUp = 0) {
+    constructor(contextManager: ContextManager, primitive: Primitive, options: { order?: string[]; } = {}, levelUp = 0) {
         super(contextManager, levelUp + 1);
         this.setLoggingName('GeometryElements');
 

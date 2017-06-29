@@ -2,7 +2,6 @@ import { ContextManager } from './ContextManager';
 import { GeometryBase } from './GeometryBase';
 import { Material } from './Material';
 import { Primitive } from './Primitive';
-import { SpinorE3 } from '../math/SpinorE3';
 /**
  * A concrete Geometry for supporting drawArrays.
  */
@@ -41,7 +40,6 @@ export declare class GeometryArrays extends GeometryBase {
      */
     constructor(contextManager: ContextManager, primitive: Primitive, options?: {
         order?: string[];
-        tilt?: SpinorE3;
     }, levelUp?: number);
     /**
      *

@@ -10,10 +10,8 @@ import { Material } from './Material';
 import { MaterialKey } from './MaterialKey';
 import { PixelFormat } from './PixelFormat';
 import { PixelType } from './PixelType';
-import { R3 } from '../math/R3';
 import { ShareableBase } from './ShareableBase';
 export interface EngineAttributes extends WebGLContextAttributes {
-    eightLogging?: boolean;
     webglLogging?: boolean;
 }
 /**
@@ -228,11 +226,4 @@ export declare class Engine extends ShareableBase implements ContextManager {
      *
      */
     putCacheMaterial<M extends Material>(materialKey: MaterialKey, material: M): void;
-    /**
-     * Computes the coordinates of a point in the image cube corresponding to device coordinates.
-     * @param deviceX The x-coordinate of the device event.
-     * @param deviceY The y-coordinate of the device event.
-     * @param imageZ The optional value to use as the resulting depth coordinate.
-     */
-    deviceToImageCoords(deviceX: number, deviceY: number, imageZ?: number): Readonly<R3>;
 }

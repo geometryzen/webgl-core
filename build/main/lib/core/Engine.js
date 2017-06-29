@@ -3,17 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var checkEnums_1 = require("./checkEnums");
 var ClearBufferMask_1 = require("./ClearBufferMask");
-var EIGHTLogger_1 = require("../commands/EIGHTLogger");
 var initWebGL_1 = require("./initWebGL");
 var isDefined_1 = require("../checks/isDefined");
-var mustBeGE_1 = require("../checks/mustBeGE");
-var mustBeLE_1 = require("../checks/mustBeLE");
+// import { mustBeGE } from '../checks/mustBeGE';
+// import { mustBeLE } from '../checks/mustBeLE';
 var mustBeNonNullObject_1 = require("../checks/mustBeNonNullObject");
 var mustBeNumber_1 = require("../checks/mustBeNumber");
 var mustBeString_1 = require("../checks/mustBeString");
 var ShareableArray_1 = require("../collections/ShareableArray");
 var ShareableBase_1 = require("./ShareableBase");
-var R3_1 = require("../math/R3");
 var VersionLogger_1 = require("../commands/VersionLogger");
 var WebGLClearColor_1 = require("../commands/WebGLClearColor");
 var WebGLEnable_1 = require("../commands/WebGLEnable");
@@ -96,9 +94,6 @@ var Engine = (function (_super) {
         _this.materials = {};
         _this.setLoggingName('Engine');
         _this._attributes = attributes;
-        if (attributes.eightLogging) {
-            _this._commands.pushWeakRef(new EIGHTLogger_1.EIGHTLogger());
-        }
         if (attributes.webglLogging) {
             _this._commands.pushWeakRef(new VersionLogger_1.VersionLogger(_this));
         }
@@ -517,23 +512,6 @@ var Engine = (function (_super) {
         mustBeString_1.mustBeString('materialKey.kind', materialKey.kind);
         var key = JSON.stringify(materialKey);
         this.materials[key] = material;
-    };
-    /**
-     * Computes the coordinates of a point in the image cube corresponding to device coordinates.
-     * @param deviceX The x-coordinate of the device event.
-     * @param deviceY The y-coordinate of the device event.
-     * @param imageZ The optional value to use as the resulting depth coordinate.
-     */
-    Engine.prototype.deviceToImageCoords = function (deviceX, deviceY, imageZ) {
-        if (imageZ === void 0) { imageZ = 0; }
-        mustBeNumber_1.mustBeNumber('deviceX', deviceX);
-        mustBeNumber_1.mustBeNumber('deviceY', deviceY);
-        mustBeNumber_1.mustBeNumber('imageZ', imageZ);
-        mustBeGE_1.mustBeGE('imageZ', imageZ, -1);
-        mustBeLE_1.mustBeLE('imageZ', imageZ, +1);
-        var imageX = ((2 * deviceX) / this.canvas.width) - 1;
-        var imageY = 1 - (2 * deviceY) / this.canvas.height;
-        return R3_1.vectorFromCoords(imageX, imageY, imageZ);
     };
     return Engine;
 }(ShareableBase_1.ShareableBase));

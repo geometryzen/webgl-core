@@ -1,17 +1,15 @@
 import * as tslib_1 from "tslib";
 import { checkEnums } from './checkEnums';
 import { ClearBufferMask } from './ClearBufferMask';
-import { EIGHTLogger } from '../commands/EIGHTLogger';
 import { initWebGL } from './initWebGL';
 import { isDefined } from '../checks/isDefined';
-import { mustBeGE } from '../checks/mustBeGE';
-import { mustBeLE } from '../checks/mustBeLE';
+// import { mustBeGE } from '../checks/mustBeGE';
+// import { mustBeLE } from '../checks/mustBeLE';
 import { mustBeNonNullObject } from '../checks/mustBeNonNullObject';
 import { mustBeNumber } from '../checks/mustBeNumber';
 import { mustBeString } from '../checks/mustBeString';
 import { ShareableArray } from '../collections/ShareableArray';
 import { ShareableBase } from './ShareableBase';
-import { vectorFromCoords } from '../math/R3';
 import { VersionLogger } from '../commands/VersionLogger';
 import { WebGLClearColor } from '../commands/WebGLClearColor';
 import { WebGLEnable } from '../commands/WebGLEnable';
@@ -94,9 +92,6 @@ var Engine = (function (_super) {
         _this.materials = {};
         _this.setLoggingName('Engine');
         _this._attributes = attributes;
-        if (attributes.eightLogging) {
-            _this._commands.pushWeakRef(new EIGHTLogger());
-        }
         if (attributes.webglLogging) {
             _this._commands.pushWeakRef(new VersionLogger(_this));
         }
@@ -515,23 +510,6 @@ var Engine = (function (_super) {
         mustBeString('materialKey.kind', materialKey.kind);
         var key = JSON.stringify(materialKey);
         this.materials[key] = material;
-    };
-    /**
-     * Computes the coordinates of a point in the image cube corresponding to device coordinates.
-     * @param deviceX The x-coordinate of the device event.
-     * @param deviceY The y-coordinate of the device event.
-     * @param imageZ The optional value to use as the resulting depth coordinate.
-     */
-    Engine.prototype.deviceToImageCoords = function (deviceX, deviceY, imageZ) {
-        if (imageZ === void 0) { imageZ = 0; }
-        mustBeNumber('deviceX', deviceX);
-        mustBeNumber('deviceY', deviceY);
-        mustBeNumber('imageZ', imageZ);
-        mustBeGE('imageZ', imageZ, -1);
-        mustBeLE('imageZ', imageZ, +1);
-        var imageX = ((2 * deviceX) / this.canvas.width) - 1;
-        var imageY = 1 - (2 * deviceY) / this.canvas.height;
-        return vectorFromCoords(imageX, imageY, imageZ);
     };
     return Engine;
 }(ShareableBase));

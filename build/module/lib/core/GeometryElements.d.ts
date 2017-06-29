@@ -2,8 +2,6 @@ import { ContextManager } from './ContextManager';
 import { GeometryBase } from './GeometryBase';
 import { Material } from './Material';
 import { Primitive } from './Primitive';
-import { SpinorE3 } from '../math/SpinorE3';
-import { VectorE3 } from '../math/VectorE3';
 /**
  * A Geometry that supports interleaved vertex buffers.
  */
@@ -44,10 +42,7 @@ export declare class GeometryElements extends GeometryBase {
      *
      */
     constructor(contextManager: ContextManager, primitive: Primitive, options?: {
-        axis?: VectorE3;
-        meridian?: VectorE3;
         order?: string[];
-        tilt?: SpinorE3;
     }, levelUp?: number);
     /**
      *
