@@ -27,13 +27,13 @@ export declare class ShareableContextConsumer extends ShareableBase implements C
      *
      * This method is idempotent; calling it more than once with the same <code>ContextManager</code> does not change the state.
      */
-    private subscribe(synchUp);
+    private subscribe;
     /**
      * Instructs the consumer to unsubscribe from context events.
      *
      * This method is idempotent; calling it more than once does not change the state.
      */
-    private unsubscribe(cleanUp);
+    private unsubscribe;
     /**
      *
      */
@@ -48,5 +48,5 @@ export declare class ShareableContextConsumer extends ShareableBase implements C
     /**
      * Provides access to the underlying WebGL context.
      */
-    readonly gl: WebGLRenderingContext;
+    get gl(): WebGLRenderingContext;
 }

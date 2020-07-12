@@ -1,12 +1,12 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import { BufferObjects } from './BufferObjects';
 import { mustBeUndefined } from '../checks/mustBeUndefined';
 import { ShareableContextConsumer } from './ShareableContextConsumer';
 /**
  * A wrapper around a WebGLBuffer with binding to ARRAY_BUFFER.
  */
-var VertexBuffer = (function (_super) {
-    tslib_1.__extends(VertexBuffer, _super);
+var VertexBuffer = /** @class */ (function (_super) {
+    __extends(VertexBuffer, _super);
     /**
      *
      */

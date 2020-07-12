@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Scene = void 0;
 var tslib_1 = require("tslib");
 var mustBeNonNullObject_1 = require("../checks/mustBeNonNullObject");
 var ShareableArray_1 = require("../collections/ShareableArray");
@@ -7,7 +8,7 @@ var ShareableContextConsumer_1 = require("../core/ShareableContextConsumer");
 /**
  * A collection of Renderable objects.
  */
-var Scene = (function (_super) {
+var Scene = /** @class */ (function (_super) {
     tslib_1.__extends(Scene, _super);
     function Scene(contextManager, levelUp) {
         if (levelUp === void 0) { levelUp = 0; }

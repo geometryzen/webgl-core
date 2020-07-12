@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.VersionLogger = void 0;
 var tslib_1 = require("tslib");
 var ShareableBase_1 = require("../core/ShareableBase");
 /**
  * Displays details about the WegGL version to the console.
  */
-var VersionLogger = (function (_super) {
+var VersionLogger = /** @class */ (function (_super) {
     tslib_1.__extends(VersionLogger, _super);
     function VersionLogger(contextManager) {
         var _this = _super.call(this) || this;

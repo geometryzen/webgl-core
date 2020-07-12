@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.refChange = void 0;
 var isDefined_1 = require("../checks/isDefined");
 var statistics = {};
 var chatty = true;

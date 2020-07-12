@@ -190,7 +190,7 @@ export class Engine extends ShareableBase implements ContextManager {
     /**
      * The canvas element associated with the WebGLRenderingContext.
      */
-    get canvas(): HTMLCanvasElement {
+    get canvas(): HTMLCanvasElement | OffscreenCanvas {
         if (this._gl) {
             return this._gl.canvas;
         }

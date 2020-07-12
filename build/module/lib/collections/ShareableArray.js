@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import { readOnly } from '../i18n/readOnly';
 import { ShareableBase } from '../core/ShareableBase';
 /**
@@ -29,8 +29,8 @@ function transferOwnership(data) {
  * Provides a safer way to maintain reference counts than a native array.
  * </p>
  */
-var ShareableArray = (function (_super) {
-    tslib_1.__extends(ShareableArray, _super);
+var ShareableArray = /** @class */ (function (_super) {
+    __extends(ShareableArray, _super);
     /**
      *
      */
@@ -131,7 +131,7 @@ var ShareableArray = (function (_super) {
         set: function (unused) {
             throw new Error(readOnly('length').message);
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

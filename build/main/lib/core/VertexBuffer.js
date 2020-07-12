@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.VertexBuffer = void 0;
 var tslib_1 = require("tslib");
 var BufferObjects_1 = require("./BufferObjects");
 var mustBeUndefined_1 = require("../checks/mustBeUndefined");
@@ -7,7 +8,7 @@ var ShareableContextConsumer_1 = require("./ShareableContextConsumer");
 /**
  * A wrapper around a WebGLBuffer with binding to ARRAY_BUFFER.
  */
-var VertexBuffer = (function (_super) {
+var VertexBuffer = /** @class */ (function (_super) {
     tslib_1.__extends(VertexBuffer, _super);
     /**
      *

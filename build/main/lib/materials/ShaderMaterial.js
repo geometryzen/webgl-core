@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ShaderMaterial = void 0;
 var tslib_1 = require("tslib");
 var Attrib_1 = require("../core/Attrib");
 var DataType_1 = require("../core/DataType");
@@ -16,7 +17,7 @@ var Uniform_1 = require("../core/Uniform");
 /**
  *
  */
-var ShaderMaterial = (function (_super) {
+var ShaderMaterial = /** @class */ (function (_super) {
     tslib_1.__extends(ShaderMaterial, _super);
     /**
      * @param vertexShaderSrc The vertex shader source code.
@@ -162,7 +163,7 @@ var ShaderMaterial = (function (_super) {
         get: function () {
             return this._vertexShaderSrc;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(ShaderMaterial.prototype, "fragmentShaderSrc", {
@@ -172,7 +173,7 @@ var ShaderMaterial = (function (_super) {
         get: function () {
             return this._fragmentShaderSrc;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(ShaderMaterial.prototype, "attributeNames", {
@@ -192,7 +193,7 @@ var ShaderMaterial = (function (_super) {
         set: function (unused) {
             throw new Error(readOnly_1.readOnly('attributeNames').message);
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

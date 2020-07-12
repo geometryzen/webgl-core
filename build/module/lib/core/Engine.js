@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import { checkEnums } from './checkEnums';
 import { ClearBufferMask } from './ClearBufferMask';
 import { initWebGL } from './initWebGL';
@@ -63,8 +63,8 @@ import { WebGLDisable } from '../commands/WebGLDisable';
  *
  *     requestAnimationFrame(animate)
  */
-var Engine = (function (_super) {
-    tslib_1.__extends(Engine, _super);
+var Engine = /** @class */ (function (_super) {
+    __extends(Engine, _super);
     /**
      * @param canvas
      * @param attributes Allows the context to be configured.
@@ -162,7 +162,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Engine.prototype, "drawingBufferHeight", {
@@ -174,7 +174,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Engine.prototype, "drawingBufferWidth", {
@@ -186,7 +186,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Engine.prototype.blendFunc = function (sfactor, dfactor) {
@@ -292,7 +292,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

@@ -1,10 +1,10 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import { ShareableBase } from '../core/ShareableBase';
 /**
  *
  */
-var StringShareableMap = (function (_super) {
-    tslib_1.__extends(StringShareableMap, _super);
+var StringShareableMap = /** @class */ (function (_super) {
+    __extends(StringShareableMap, _super);
     /**
      * A map of string to V extends Shareable.
      */
@@ -70,7 +70,7 @@ var StringShareableMap = (function (_super) {
         get: function () {
             return Object.keys(this.elements);
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(StringShareableMap.prototype, "values", {
@@ -83,7 +83,7 @@ var StringShareableMap = (function (_super) {
             }
             return values;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     StringShareableMap.prototype.remove = function (key) {

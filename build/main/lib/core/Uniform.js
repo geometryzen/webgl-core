@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Uniform = void 0;
 var isNull_1 = require("../checks/isNull");
 var mustBeObject_1 = require("../checks/mustBeObject");
 /**
  * A wrapper around a <code>WebGLUniformLocation</code>.
  */
-var Uniform = (function () {
+var Uniform = /** @class */ (function () {
     function Uniform(info) {
         if (!isNull_1.isNull(info)) {
             mustBeObject_1.mustBeObject('info', info);

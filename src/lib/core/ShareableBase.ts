@@ -2,7 +2,6 @@ import { isDefined } from '../checks/isDefined';
 import { mustBeEQ } from '../checks/mustBeEQ';
 import { mustBeInteger } from '../checks/mustBeInteger';
 import { mustBeString } from '../checks/mustBeString';
-import { readOnly } from '../i18n/readOnly';
 import { refChange } from './refChange';
 import { Shareable } from '../core/Shareable';
 import { uuid4 } from './uuid4';
@@ -103,13 +102,15 @@ export class ShareableBase implements Shareable {
     /**
      * Returns the total length of the inheritance hierarchy that this instance is involved in.
      */
-    private get levelUp(): number {
+    public get levelUp(): number {
         return this._levelUp;
     }
+    /*
     private set levelUp(levelUp: number) {
         // The only way the level gets changed is through setLoggingName.
         throw new Error(readOnly('levelUp').message);
     }
+    */
 
     /**
      * An object is a zombie if it has been released by all who have held references.
@@ -194,7 +195,7 @@ export class ShareableBase implements Shareable {
         return refCount;
     }
 
-    private get uuid(): string {
+    public get uuid(): string {
         return this._uuid;
     }
 }

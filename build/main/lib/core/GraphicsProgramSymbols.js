@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GraphicsProgramSymbols = void 0;
 /**
  * Canonical variable names, which also act as semantic identifiers for name overrides.
  * These names must be stable to avoid breaking custom vertex and fragment shaders.
  */
-var GraphicsProgramSymbols = (function () {
+var GraphicsProgramSymbols = /** @class */ (function () {
     function GraphicsProgramSymbols() {
     }
     /**

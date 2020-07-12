@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.NumberShareableMap = void 0;
 var tslib_1 = require("tslib");
 var ShareableBase_1 = require("../core/ShareableBase");
-var NumberShareableMap = (function (_super) {
+var NumberShareableMap = /** @class */ (function (_super) {
     tslib_1.__extends(NumberShareableMap, _super);
     function NumberShareableMap() {
         var _this = _super.call(this) || this;
@@ -60,7 +61,7 @@ var NumberShareableMap = (function (_super) {
             // FIXME: cache? Maybe, clients may use this to iterate. forEach is too slow.
             return Object.keys(this._elements).map(function (keyString) { return parseFloat(keyString); });
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     NumberShareableMap.prototype.remove = function (key) {

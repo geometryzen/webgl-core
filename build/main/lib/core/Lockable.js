@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LockableMixin = exports.lockable = exports.TargetUnlockedError = exports.TargetLockedError = exports.lock = void 0;
 var tslib_1 = require("tslib");
 /**
  * Sets the lock on the argument and returns the same argument.
@@ -9,7 +10,7 @@ function lock(m) {
     return m;
 }
 exports.lock = lock;
-var TargetLockedError = (function (_super) {
+var TargetLockedError = /** @class */ (function (_super) {
     tslib_1.__extends(TargetLockedError, _super);
     /**
      * `operationName` is the name of the operation, without parentheses or parameters.
@@ -20,7 +21,7 @@ var TargetLockedError = (function (_super) {
     return TargetLockedError;
 }(Error));
 exports.TargetLockedError = TargetLockedError;
-var TargetUnlockedError = (function (_super) {
+var TargetUnlockedError = /** @class */ (function (_super) {
     tslib_1.__extends(TargetUnlockedError, _super);
     /**
      * `operationName` is the name of the operation, without parentheses.
@@ -67,7 +68,7 @@ exports.lockable = lockable;
 /**
  * Lockable Mixin
  */
-var LockableMixin = (function () {
+var LockableMixin = /** @class */ (function () {
     function LockableMixin() {
     }
     LockableMixin.prototype.isLocked = function () {

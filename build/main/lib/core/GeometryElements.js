@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GeometryElements = void 0;
 var tslib_1 = require("tslib");
 var DataType_1 = require("./DataType");
 var GeometryBase_1 = require("./GeometryBase");
@@ -15,7 +16,7 @@ var Usage_1 = require("./Usage");
 /**
  * A Geometry that supports interleaved vertex buffers.
  */
-var GeometryElements = (function (_super) {
+var GeometryElements = /** @class */ (function (_super) {
     tslib_1.__extends(GeometryElements, _super);
     /**
      *

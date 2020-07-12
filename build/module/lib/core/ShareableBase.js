@@ -2,7 +2,6 @@ import { isDefined } from '../checks/isDefined';
 import { mustBeEQ } from '../checks/mustBeEQ';
 import { mustBeInteger } from '../checks/mustBeInteger';
 import { mustBeString } from '../checks/mustBeString';
-import { readOnly } from '../i18n/readOnly';
 import { refChange } from './refChange';
 import { uuid4 } from './uuid4';
 /**
@@ -33,7 +32,7 @@ import { uuid4 } from './uuid4';
  *     }
  *
  */
-var ShareableBase = (function () {
+var ShareableBase = /** @class */ (function () {
     /**
      *
      */
@@ -92,13 +91,15 @@ var ShareableBase = (function () {
         get: function () {
             return this._levelUp;
         },
-        set: function (levelUp) {
-            // The only way the level gets changed is through setLoggingName.
-            throw new Error(readOnly('levelUp').message);
-        },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
+    /*
+    private set levelUp(levelUp: number) {
+        // The only way the level gets changed is through setLoggingName.
+        throw new Error(readOnly('levelUp').message);
+    }
+    */
     /**
      * An object is a zombie if it has been released by all who have held references.
      * In some cases it may be possible to recycle a zombie.
@@ -181,7 +182,7 @@ var ShareableBase = (function () {
         get: function () {
             return this._uuid;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return ShareableBase;

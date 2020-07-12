@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ImageTexture = void 0;
 var tslib_1 = require("tslib");
 var DataType_1 = require("./DataType");
 var PixelFormat_1 = require("./PixelFormat");
 var Texture_1 = require("./Texture");
-var ImageTexture = (function (_super) {
+var ImageTexture = /** @class */ (function (_super) {
     tslib_1.__extends(ImageTexture, _super);
     function ImageTexture(image, target, contextManager, levelUp) {
         if (levelUp === void 0) { levelUp = 0; }
@@ -31,7 +32,7 @@ var ImageTexture = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(ImageTexture.prototype, "naturalWidth", {
@@ -43,7 +44,7 @@ var ImageTexture = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     ImageTexture.prototype.upload = function () {

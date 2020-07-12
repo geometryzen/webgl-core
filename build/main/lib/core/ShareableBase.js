@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ShareableBase = void 0;
 var isDefined_1 = require("../checks/isDefined");
 var mustBeEQ_1 = require("../checks/mustBeEQ");
 var mustBeInteger_1 = require("../checks/mustBeInteger");
 var mustBeString_1 = require("../checks/mustBeString");
-var readOnly_1 = require("../i18n/readOnly");
 var refChange_1 = require("./refChange");
 var uuid4_1 = require("./uuid4");
 /**
@@ -35,7 +35,7 @@ var uuid4_1 = require("./uuid4");
  *     }
  *
  */
-var ShareableBase = (function () {
+var ShareableBase = /** @class */ (function () {
     /**
      *
      */
@@ -94,13 +94,15 @@ var ShareableBase = (function () {
         get: function () {
             return this._levelUp;
         },
-        set: function (levelUp) {
-            // The only way the level gets changed is through setLoggingName.
-            throw new Error(readOnly_1.readOnly('levelUp').message);
-        },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
+    /*
+    private set levelUp(levelUp: number) {
+        // The only way the level gets changed is through setLoggingName.
+        throw new Error(readOnly('levelUp').message);
+    }
+    */
     /**
      * An object is a zombie if it has been released by all who have held references.
      * In some cases it may be possible to recycle a zombie.
@@ -183,7 +185,7 @@ var ShareableBase = (function () {
         get: function () {
             return this._uuid;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return ShareableBase;

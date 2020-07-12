@@ -2,7 +2,7 @@ import { readOnly } from '../i18n/readOnly';
 /**
  * An object-oriented representation of an <code>attribute</code> in a GLSL shader program.
  */
-var Attrib = (function () {
+var Attrib = /** @class */ (function () {
     /**
      *
      */
@@ -24,7 +24,7 @@ var Attrib = (function () {
         set: function (unused) {
             throw new Error(readOnly('index').message);
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

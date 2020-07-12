@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TextureLoader = void 0;
 var ImageTexture_1 = require("../core/ImageTexture");
 var isFunction_1 = require("../checks/isFunction");
 var isDefined_1 = require("../checks/isDefined");
@@ -23,7 +24,7 @@ var TextureTarget_1 = require("../core/TextureTarget");
  *       scene.add(sphere)
  *     })
  */
-var TextureLoader = (function () {
+var TextureLoader = /** @class */ (function () {
     /**
      * @param contextManager
      */

@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebGLClearColor = void 0;
 var tslib_1 = require("tslib");
 var mustBeNumber_1 = require("../checks/mustBeNumber");
 var ShareableBase_1 = require("../core/ShareableBase");
-var WebGLClearColor = (function (_super) {
+var WebGLClearColor = /** @class */ (function (_super) {
     tslib_1.__extends(WebGLClearColor, _super);
     function WebGLClearColor(contextManager, r, g, b, a) {
         if (r === void 0) { r = 0; }

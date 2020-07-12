@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Engine = void 0;
 var tslib_1 = require("tslib");
 var checkEnums_1 = require("./checkEnums");
 var ClearBufferMask_1 = require("./ClearBufferMask");
@@ -65,7 +66,7 @@ var WebGLDisable_1 = require("../commands/WebGLDisable");
  *
  *     requestAnimationFrame(animate)
  */
-var Engine = (function (_super) {
+var Engine = /** @class */ (function (_super) {
     tslib_1.__extends(Engine, _super);
     /**
      * @param canvas
@@ -164,7 +165,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Engine.prototype, "drawingBufferHeight", {
@@ -176,7 +177,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Engine.prototype, "drawingBufferWidth", {
@@ -188,7 +189,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Engine.prototype.blendFunc = function (sfactor, dfactor) {
@@ -294,7 +295,7 @@ var Engine = (function (_super) {
                 return void 0;
             }
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

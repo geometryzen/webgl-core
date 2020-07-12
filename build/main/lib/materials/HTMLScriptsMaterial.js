@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.HTMLScriptsMaterial = void 0;
 var tslib_1 = require("tslib");
 var isString_1 = require("../checks/isString");
 var mustBeArray_1 = require("../checks/mustBeArray");
@@ -69,7 +70,7 @@ function detectShaderType(scriptIds, dom) {
  * The scripts are lazily loaded so that the constructor may be called before
  * the DOM has finished loading.
  */
-var HTMLScriptsMaterial = (function (_super) {
+var HTMLScriptsMaterial = /** @class */ (function (_super) {
     tslib_1.__extends(HTMLScriptsMaterial, _super);
     /**
      * @param contextManager

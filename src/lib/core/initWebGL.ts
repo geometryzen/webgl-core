@@ -6,7 +6,7 @@ import { isDefined } from '../checks/isDefined';
  * attributes
  * If the canvas is undefined then an undefined value is returned for the context.
  */
-export function initWebGL(canvas: HTMLCanvasElement, attributes?: WebGLContextAttributes): WebGLRenderingContext {
+export function initWebGL(canvas: HTMLCanvasElement | OffscreenCanvas, attributes?: WebGLContextAttributes): WebGLRenderingContext {
 
     // We'll be hyper-functional. An undefined canvas begets and undefined context.
     // Clients must check their context output or canvas input.
@@ -15,7 +15,7 @@ export function initWebGL(canvas: HTMLCanvasElement, attributes?: WebGLContextAt
 
         try {
             // Try to grab the standard context. If it fails, fallback to experimental.
-            context = <WebGLRenderingContext>(canvas.getContext('webgl', attributes) || canvas.getContext('experimental-webgl', attributes));
+            context = <WebGLRenderingContext>(canvas.getContext('webgl', attributes));
         }
         catch (e) {
             // Do nothing.

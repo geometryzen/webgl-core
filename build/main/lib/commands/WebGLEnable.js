@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebGLEnable = void 0;
 var tslib_1 = require("tslib");
 var mustBeNumber_1 = require("../checks/mustBeNumber");
 var ShareableBase_1 = require("../core/ShareableBase");
 /**
  * enable(capability: Capability): void
  */
-var WebGLEnable = (function (_super) {
+var WebGLEnable = /** @class */ (function (_super) {
     tslib_1.__extends(WebGLEnable, _super);
     function WebGLEnable(contextManager, capability) {
         var _this = _super.call(this) || this;

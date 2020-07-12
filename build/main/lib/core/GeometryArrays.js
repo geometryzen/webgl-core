@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GeometryArrays = void 0;
 var tslib_1 = require("tslib");
 var GeometryBase_1 = require("./GeometryBase");
 var mustBeNonNullObject_1 = require("../checks/mustBeNonNullObject");
@@ -9,7 +10,7 @@ var VertexBuffer_1 = require("./VertexBuffer");
 /**
  * A concrete Geometry for supporting drawArrays.
  */
-var GeometryArrays = (function (_super) {
+var GeometryArrays = /** @class */ (function (_super) {
     tslib_1.__extends(GeometryArrays, _super);
     /**
      *
